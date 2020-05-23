@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        //Создание массива данных [0, ..., 999]
+        let array = [];
+        for (let i = 0; i <= 999; i++) {
+            array.push(i);
+        }
+        //Выбор случайного числа из массива
+        let randomNumber = (array[new Date % array.length]);
+
+        class Object {
+            constructor(randomNumber) {
+                this.units = this.units();
+                this.tens = this.tens();
+                this.hundreds = this.hundreds();
+            };
+            //сотни
+            hundreds() {
+                this.hundreds = randomNumber / 100;
+                    if( this.hundreds >= 1) {
+                        return Math.floor(this.hundreds);
+                    } else if (this.hundreds < 1) {
+                        return 0;
+                    }
+            };
+            //десятки
+            tens() {
+                this.tens = Math.floor(randomNumber / 10);
+                this.tens = this.tens.toString().slice(-1);
+                    return +this.tens;
+                
+            };
+            //единицы
+            units() {
+                this.units = randomNumber.toString().slice(-1);
+                    return +this.units;
+            };
+        }
+
+        const newObject = new Object(randomNumber);
+        console.log(newObject);
+        
+    </script>
+</body>
+</html>

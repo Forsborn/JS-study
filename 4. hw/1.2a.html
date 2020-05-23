@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //es5
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+        Post.prototype.edit = function () {
+               let newText = String(prompt("введите текст"));
+                return this.text = this.text + " " + newText; 
+        }
+
+        let postES5 = new Post('John', 'lorem lorem lorem', 31.12);
+        console.log(postES5);
+        console.log(postES5.edit());
+
+        //es6
+        class PostES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit() {
+                let newText = String(prompt("введите текст"));
+                return this.text = this.text + " " + newText; 
+            }
+        }
+
+        const postES6 = new PostES6('John', "lorem lorem lorem lorem", 1.01);
+        console.log(postES6);
+        console.log(postES6.edit());
+
+    </script>
+</body>
+</html>
