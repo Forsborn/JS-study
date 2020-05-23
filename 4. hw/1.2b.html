@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //es5
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+        Post.prototype.edit = function () {
+               let newText = String(prompt("введите текст"));
+                return this.text = this.text + " " + newText; 
+        }
+
+        function AttachedPost(author, text, date, highlighted) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            return this.highlighted = true;
+        }
+
+        let postES5 = new AttachedPost('John', 'lorem lorem lorem', 31.12);
+        console.log(postES5);
+        console.log(postES5.makeTextHighlighted());
+
+
+        //es6
+        class PostES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit() {
+                let newText = String(prompt("введите текст"));
+                return this.text = this.text + " " + newText; 
+            }
+        }
+
+        class AttachedPost extends PostES6 {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+            makeTextHighlighted() {
+                return this.highlighted = true;
+            }
+        }
+
+        const postES6 = new AttachedPost('John', "lorem lorem lorem lorem", 1.01);
+        console.log(postES6);
+        console.log(postES6.makeTextHighlighted());
+
+    </script>
+</body>
+</html>
