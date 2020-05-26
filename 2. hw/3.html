@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        
+        function difference() {
+
+            let a = Math.floor(Math.random() * 201) - 100;
+            let b = Math.floor(Math.random() * 201) - 100;
+            let sum = '';
+            
+            if( a >= 0 && b >= 0) {
+                sum = a - b;
+                return alert(sum);
+            } else {
+                difference();
+            }
+        }
+
+        function composition() {
+
+            let a = Math.floor(Math.random() * 201) - 100;
+            let b = Math.floor(Math.random() * 201) - 100;
+            let sum = '';
+
+            if( a <= 0 && b <= 0) {
+                sum = a * b;
+                return alert(sum)
+            } else {
+                composition();
+            }
+        }
+
+        function summ() {
+
+            let a = Math.floor(Math.random() * 201) - 100;
+            let b = Math.floor(Math.random() * 201) - 100;
+            let sum = '';
+            
+            check( a, b );
+            function check( a , b ) {
+                let fNum = Math.sign(a);
+                let sNum = Math.sign(b);
+                if((fNum > 0 && sNum < 0) || (fNum < 0 && sNum > 0)) {
+                    return;
+                } else {
+                    summ();
+                }
+            }
+
+            sum = a + b;
+            alert(sum);
+
+        }
+
+        difference();
+        composition();
+        summ();
+
+    </script>
+</body>
+</html>
