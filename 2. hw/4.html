@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        
+        let a = Math.floor(Math.random() * 100);
+        let b = Math.floor(Math.random() * 100);
+
+        function addition() {
+            addition = a + b;
+            return addition;
+        }
+
+        function subtraction() {
+            subtraction = a - b;
+            return subtraction;
+        }
+
+        function division() {
+            division = a / b;
+            return division;
+        }
+
+        function multiplication() {
+            multiplication = a * b;
+            return multiplication;
+        }
+
+        addition();
+        console.log("Сумма сложения: " + addition);
+        subtraction();
+        console.log("Сумма вычитания: " + subtraction);
+        division();
+        console.log("Сумма деления: " + division);
+        multiplication();
+        console.log("Сумма умножения: " + multiplication);
+
+    </script>
+</body>
+</html>

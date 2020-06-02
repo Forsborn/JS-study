@@ -1,0 +1,17 @@
+img {
+    width: 175px;
+    height: 175px;
+}
+
+.pos {
+    display: flex;
+    justify-content: space-around;
+}
+.product {
+    width: 175px; 
+}
+
+.prod {
+    display: flex;
+    justify-content: space-around;
+}
